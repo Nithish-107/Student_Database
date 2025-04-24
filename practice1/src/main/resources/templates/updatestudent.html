@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update Students</title>
+  <style>
+    body {
+      background-color: aliceblue;
+      font-family: Verdana, sans-serif;
+      margin: 0;
+      padding: 0px;
+    }
+    .navbar {
+  background-color: darkcyan;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 12px 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  background-color: teal;
+  border-radius: 5px;
+}
+
+
+    .form-container {
+      background-color: white;
+      padding: 40px;
+      max-width: 400px;
+      margin: 40px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px gray;
+      text-align: center;
+    }
+
+    h1 {
+      color: navy;
+      margin-bottom: 30px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 2px solid lightgray;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: forestgreen;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: seagreen;
+    }
+  </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="home.html">Home</a>
+        <a href="index.html">Student Database</a>
+        <a href="addstudent.html">Add Students</a>
+        <a href="updatestudent.html">Update Students</a>
+        <a href="deletestudent.html">Delete Students</a>
+      </div>
+
+  <div class="form-container">
+    <h1>Update Student</h1>
+    <form action="http://localhost:8080/updatestudents" method="post">
+      <input type="number" name="rollno" placeholder="Enter your Rollno" required><br>
+      <input type="text" name="name" placeholder="Enter your Name" required><br>
+      <select name="dept" required>
+        <option value="" selected disabled>Select your Department</option>
+        <option value="cse">CSE</option>
+        <option value="ece">ECE</option>
+        <option value="it">IT</option>
+      </select><br>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+</body>
+</html>

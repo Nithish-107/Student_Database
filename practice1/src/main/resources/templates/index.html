@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Table</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+    }
+    .navbar {
+      background-color: darkcyan;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      padding: 12px 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .navbar a:hover {
+      background-color: teal;
+      border-radius: 5px;
+    }
+    
+    body {
+      font-family: Arial, sans-serif;
+      background-color: lightblue;
+      color: black;
+      margin: 0;
+      padding: 0px;
+    }
+    h1 {
+      text-align: center;
+      color: navy;
+    }
+    table {
+      width: 60%;
+      margin: 0 auto;
+      border-collapse: collapse;
+      background-color: white;
+      box-shadow: 0 0 10px gray;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    th, td {
+      padding: 12px 20px;
+      text-align: center;
+    }
+    th {
+      background-color: dodgerblue;
+      color: white;
+      font-size: 18px;
+    }
+    tr:nth-child(even) {
+      background-color: lightgray;
+    }
+    tr:hover {
+      background-color: lightskyblue;
+    }
+    
+  </style>
+  <script type="text/javascript" src="myscript.js"></script>
+</head>
+<body>
+  <div class="navbar">
+    <a href="home.html">Home</a>
+    <a href="index.html">Student Database</a>
+    <a href="addstudent.html">Add Students</a>
+    <a href="updatestudent.html">Update Students</a>
+    <a href="deletestudent.html">Delete Students</a>
+  </div>
+
+  <h1>Student Details</h1>
+<div class="container">
+  <table border="1px">
+    <tr>
+      <th>Roll No</th>
+      <th>Name</th>
+      <th>Department</th>
+    </tr>
+    <tbody id="tb"></tbody>
+  </table>
+</div>
+  <script>
+    window.onload = function () {
+      table1();
+    };
+  </script>
+</body>
+</html>

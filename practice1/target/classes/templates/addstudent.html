@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add Students</title>
+  <style>
+    body {
+      background-color: lavender;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 50px;
+    }
+
+    .form-container {
+      background-color: white;
+      max-width: 400px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px gray;
+      text-align: center;
+    }
+
+    h1 {
+      color: darkblue;
+      margin-bottom: 20px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 2px solid lightgray;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: darkgreen;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: seagreen;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h1>Add Students</h1>
+    <form action="http://localhost:8080/addstudents" method="post">
+      <input type="number" name="rollno" placeholder="Enter your Rollno" required><br>
+      <input type="text" name="name" placeholder="Enter your Name" required><br>
+      <select name="dept" required>
+        <option value="" disabled selected>Select department</option>
+        <option value="cse">CSE</option>
+        <option value="ece">ECE</option>
+        <option value="it">IT</option>
+      </select><br>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+</html>

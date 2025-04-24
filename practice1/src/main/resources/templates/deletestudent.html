@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete Student</title>
+  <style>
+     body, html {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: lightyellow;
+      margin: 0;
+      padding: 0px;
+      color: black;
+    }
+     .navbar {
+  background-color: darkcyan;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 12px 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  background-color: teal;
+  border-radius: 5px;
+}
+
+
+    .container {
+      text-align: center;
+      background-color: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px gray;
+      width: 400px;
+      margin:40px auto;
+    }
+
+    h1 {
+      color: darkred;
+      margin-bottom: 30px;
+    }
+
+    input[type="number"] {
+      padding: 10px;
+      width: 80%;
+      border: 1px solid darkgray;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: crimson;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background-color: firebrick;
+    }
+  </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="home.html">Home</a>
+        <a href="index.html">Student Database</a>
+        <a href="addstudent.html">Add Students</a>
+        <a href="updatestudent.html">Update Students</a>
+        <a href="deletestudent.html">Delete Students</a>
+      </div>
+
+  <div class="container">
+    <h1>Delete Student By Rollno</h1>
+    <input id="rollno" type="number" placeholder="Enter your rollno" required>
+    <br><br>
+    <button onclick="deleteStudent()">Delete</button>
+  </div>
+
+  <script>
+    function deleteStudent() {
+      const rollno = document.getElementById("rollno").value;
+      fetch(`http://localhost:8080/delete student/${rollno}`, {
+        method: 'DELETE'
+      })
+        .then(response => {
+          if (response.ok) {
+            alert("Deleted successfully");
+          } else {
+            alert("Delete failed: Roll number not found");
+          }
+        });
+    }
+  </script>
+
+</body>
+</html>
